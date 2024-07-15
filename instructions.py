@@ -3,13 +3,31 @@ from constants import *
 from utils import *
 
 pygame.init()
+pygame.font.init()
 
 
-def load_text(filename):
+def load_text(filename, font, font_size, max_width):
     with open(f'{filename}.txt', 'r') as file:
         return file.read()
     
-        # TODO: wrap the text so that it fits in the screen
+    words = text.split(' ')
+    lines = []
+    current_line = []
+
+    text_font = pygame.font.SysFont(font, font_size)
+
+    for word in words:
+        current_line.append(word)
+        line_width, _ = text_font.size(' '.join(current_line))
+
+        if line_width > max_width:
+            current_line.pop()
+            lines.append(' '.join(current_line))
+            current_line = [word]
+
+    lines.append(' '.join(current_line))
+
+    return lines
     
 
 def draw_window_instructions(win):
