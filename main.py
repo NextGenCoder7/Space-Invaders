@@ -27,6 +27,14 @@ def main():
             # TODO: pass the game's main loop function here
             run = False
 
+        if state == 'instructions':
+            # TODO: pass the instructions display's main loop function here
+            run = False
+
+        if state == 'scores display':
+            # TODO: pass the scores display's main loop function here
+            run = False
+
     pygame.quit()
     quit() 
 

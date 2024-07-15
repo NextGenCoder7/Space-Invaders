@@ -1,11 +1,14 @@
 import pygame
 from constants import *
+from utils import *
 
 pygame.init()
 
 
 def draw_window_main_menu(win):
     win.fill(BLACK)
+
+    draw_text('comicsans', "SPACE INVADERS", 48, BLUE, win, win.get_width() // 2 - 200, 10)
 
     pygame.display.flip()
 
@@ -29,6 +32,3 @@ def main_menu_loop(win):
                     return 'playing game'
 
         draw_window_main_menu(win)
-
-    pygame.quit()
-    quit()
