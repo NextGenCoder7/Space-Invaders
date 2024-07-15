@@ -33,6 +33,9 @@ def main_menu_loop(win):
                 
                 if event.key == pygame.K_i:
                     return 'instructions'
+                
+                if event.key == pygame.K_s:
+                    return 'scores display'
 
         draw_window_main_menu(win)
 

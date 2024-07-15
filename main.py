@@ -3,6 +3,7 @@ from constants import *
 from utils import *
 from main_menu import main_menu_loop
 from instructions import instructions_loop
+from scores import scores_loop
 
 pygame.init()
 
@@ -22,6 +23,8 @@ def main():
                 state = 'playing game'
             if current == 'instructions':
                 state = 'instructions'
+            if current == 'scores display':
+                state = 'scores display'
 
         if state == 'playing game':
             # TODO: pass the playing game's main loop function here
@@ -36,12 +39,16 @@ def main():
             
             if current == 'main menu':
                 state = 'main menu'
-            if current == 'playing game':
-                state = 'playing game'
+            if current == 'scores display':
+                state = 'scores display'
 
         if state == 'scores display':
-            # TODO: pass the scores display's main loop function here
-            run = False
+            current = scores_loop(WIN)
+
+            if current == 'main menu':
+                state = 'main menu'
+            if current == 'instructions':
+                state = 'instructions'
 
     pygame.quit()
     quit() 
