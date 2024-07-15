@@ -30,5 +30,11 @@ def main_menu_loop(win):
 
                 if event.key == pygame.K_SPACE:
                     return 'playing game'
+                
+                if event.key == pygame.K_i:
+                    return 'instructions'
 
         draw_window_main_menu(win)
+
+    pygame.quit()
+    quit()

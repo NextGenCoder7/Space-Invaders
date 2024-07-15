@@ -1,0 +1,18 @@
+Welcome. Space Invaders is a very fun game to play. You are controlling a spaceship which is flying through space. 
+There are waves of enemies that are trying to attack you. Your goal is to make it as far as possible throughout the game.
+Each level is a wave of enemies. As you get through levels, the waves of enemies will become tougher and tougher. 
+Make sure you try to kill every single enemy possible, because if an enemy reaches the bottom of the screen, you lose a life.
+Also try to avoid as many enemy attacks as possible. When you have no more lives or your spaceship health is out, you lose.
+All your scores are saved, and you have the options to view your highest score and delete any scores.
+You can only start the game from the main menu, not from the game over, scores display or this instructions page. 
+
+Movement controls:                W / UP arrow = up
+                                  A / LEFT arrow = left
+                                  S / DOWN arrow = down
+                                  D / RIGHT arrow = right
+                                  SPACEBAR = shoot
+
+Other keys:                       S = view all scores
+                                  Q / ESCAPE = quit immediately
+                                  M = main menu (doesn't work during gameplay)
+                                  I = instructions page (this one)
