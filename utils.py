@@ -10,7 +10,6 @@ def draw_text_centre(font_name, text, font_size, color, win):
     text_font = pygame.font.Font(font_path, font_size)
     text_surface = text_font.render(text, True, color)
     win.blit(text_surface, (win.get_width() // 2 - text_surface.get_width() // 2, win.get_height() // 2 - text_surface.get_height() // 2))
-    pygame.display.update()
 
 
 def draw_text(font_name, text, font_size, color, win, x, y):
@@ -18,7 +17,6 @@ def draw_text(font_name, text, font_size, color, win, x, y):
     text_font = pygame.font.Font(font_path, font_size)
     text_surface = text_font.render(text, True, color)
     win.blit(text_surface, (x, y))
-    pygame.display.update()
 
 
 def load_multiple_images(file_prefix, number_of_images):

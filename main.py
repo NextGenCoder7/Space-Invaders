@@ -7,9 +7,6 @@ from scores import scores_loop
 
 pygame.init()
 
-WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Space Invaders")
-
 
 def main():
     state = 'main menu'

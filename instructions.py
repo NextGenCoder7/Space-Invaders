@@ -8,7 +8,7 @@ pygame.font.init()
 font_path = os.path.join('assets', 'font', 'press_start_2p.ttf')
 
 
-def load_text(filename, font_name, font_size, max_width):
+def load_text(filename, font_size, max_width):
     with open(f'{filename}.txt', 'r') as file:
         text = file.read()
     
@@ -38,11 +38,11 @@ def load_text(filename, font_name, font_size, max_width):
 def draw_window_instructions(win):
     win.blit(SPACE_BG, (0, 0))
     
-    instructions_lines = load_text('instructions', 'press_start_2p', 21, WIDTH - 100)
+    instructions_lines = load_text('instructions', 21, WIDTH - 100)
     y_offset = 20
 
     for line in instructions_lines:
-        draw_text('press_start_2p', line, 21, WHITE, win, 50, y_offset)
+        draw_text('press_start_2p', line, 21, ORANGE, win, 50, y_offset)
         y_offset += pygame.font.Font(font_path, 21).get_linesize()
 
     pygame.display.update()
@@ -50,9 +50,6 @@ def draw_window_instructions(win):
 
 def instructions_loop(win):
     clock = pygame.time.Clock()
-
-    # Draw the instructions once
-    draw_window_instructions(win)
 
     run = True
     while run:
@@ -74,6 +71,8 @@ def instructions_loop(win):
                 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pass
+
+        draw_window_instructions(win)
 
     pygame.quit()
     quit()
