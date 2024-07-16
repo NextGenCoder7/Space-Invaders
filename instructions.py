@@ -5,15 +5,17 @@ from utils import *
 pygame.init()
 pygame.font.init()
 
+font_path = os.path.join('assets', 'font', 'press_start_2p.ttf')
 
-def load_text(filename, font, font_size, max_width):
+
+def load_text(filename, font_name, font_size, max_width):
     with open(f'{filename}.txt', 'r') as file:
         text = file.read()
     
     lines = text.split('\n')
     wrapped_lines = []
 
-    text_font = pygame.font.SysFont(font, font_size)
+    text_font = pygame.font.Font(font_path, font_size)
 
     for line in lines:
         words = line.split(' ')
@@ -34,14 +36,14 @@ def load_text(filename, font, font_size, max_width):
 
 
 def draw_window_instructions(win):
-    win.fill(BLACK)
+    win.blit(SPACE_BG, (0, 0))
     
-    instructions_lines = load_text('instructions', 'comicsans', 24, WIDTH - 100)
+    instructions_lines = load_text('instructions', 'press_start_2p', 21, WIDTH - 100)
     y_offset = 20
 
     for line in instructions_lines:
-        draw_text('comicsans', line, 24, WHITE, win, 50, y_offset)
-        y_offset += pygame.font.SysFont('comicsans', 24).get_linesize()
+        draw_text('press_start_2p', line, 21, WHITE, win, 50, y_offset)
+        y_offset += pygame.font.Font(font_path, 21).get_linesize()
 
     pygame.display.update()
 
@@ -69,6 +71,9 @@ def instructions_loop(win):
                 
                 if event.key == pygame.K_s:
                     return 'scores display'
+                
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                pass
 
     pygame.quit()
     quit()

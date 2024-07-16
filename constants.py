@@ -1,3 +1,8 @@
+import pygame
+import os
+
+pygame.init()
+
 WIDTH, HEIGHT = 1100, 900
 
 FPS = 60
@@ -10,3 +15,6 @@ YELLOW = (255, 255, 0)
 WHITE = (255, 255, 255)
 GREY = (128, 128, 128)
 BLACK = (0, 0, 0)
+
+SPACE_BG = pygame.image.load(os.path.join('assets', 'images', 'bg.png'))
+SPACE_BG = pygame.transform.scale(SPACE_BG, (WIDTH, HEIGHT))

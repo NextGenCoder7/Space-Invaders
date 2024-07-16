@@ -6,15 +6,18 @@ pygame.init()
 
 
 def draw_window_main_menu(win):
-    win.fill(BLACK)
+    win.blit(SPACE_BG, (0, 0))
 
-    draw_text('comicsans', "SPACE INVADERS", 48, BLUE, win, win.get_width() // 2 - 200, 10)
+    draw_text('press_start_2p', "SPACE INVADERS", 48, BLUE, win, WIDTH // 2 - 300, 10)
 
     pygame.display.flip()
 
 
 def main_menu_loop(win):
     clock = pygame.time.Clock()
+
+    # draw window once
+    draw_window_main_menu(win)
 
     run = True
     while run:
@@ -36,8 +39,9 @@ def main_menu_loop(win):
                 
                 if event.key == pygame.K_s:
                     return 'scores display'
-
-        draw_window_main_menu(win)
+                
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                pass
 
     pygame.quit()
     quit()
