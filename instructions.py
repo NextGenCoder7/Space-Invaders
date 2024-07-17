@@ -1,11 +1,15 @@
 import pygame
 from constants import *
 from utils import *
+from buttons import Button
 
 pygame.init()
 pygame.font.init()
 
 font_path = os.path.join('assets', 'font', 'press_start_2p.ttf')
+
+scores_button = Button(WIN, 200, HEIGHT - 70, 200, 60, YELLOW, WHITE)
+main_menu_button = Button(WIN, WIDTH - 430, HEIGHT - 70, 200, 60, BLUE, WHITE)
 
 
 def load_text(filename, font_size, max_width):
@@ -35,8 +39,14 @@ def load_text(filename, font_size, max_width):
     return wrapped_lines
 
 
-def draw_window_instructions(win):
+def draw_window_instructions(win, mouse_pos):
     win.blit(SPACE_BG, (0, 0))
+
+    scores_button.draw(mouse_pos)
+    draw_text('press_start_2p', 'SCORES', 31, YELLOW, win, scores_button.rect.left + 9, scores_button.rect.centery - 15)
+
+    main_menu_button.draw(mouse_pos)
+    draw_text('press_start_2p', 'MAIN MENU', 21, BLUE, win, main_menu_button.rect.left + 8, main_menu_button.rect.centery - 11)
     
     instructions_lines = load_text('instructions', 21, WIDTH - 100)
     y_offset = 20
@@ -54,6 +64,7 @@ def instructions_loop(win):
     run = True
     while run:
         clock.tick(FPS)
+        mouse_pos = pygame.mouse.get_pos()
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -70,9 +81,14 @@ def instructions_loop(win):
                     return 'scores display'
                 
             if event.type == pygame.MOUSEBUTTONDOWN:
-                pass
+                if event.button == 1:
 
-        draw_window_instructions(win)
+                    if scores_button.is_clicked(mouse_pos):
+                        return'scores display'
+                    if main_menu_button.is_clicked(mouse_pos):
+                        return 'main menu'
+
+        draw_window_instructions(win, mouse_pos)
 
     pygame.quit()
     quit()

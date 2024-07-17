@@ -22,7 +22,7 @@ def draw_window_main_menu(win, mouse_pos):
     draw_text('press_start_2p', 'INSTRUCTIONS', 20, ORANGE, win, instructions_button.rect.left + 6, instructions_button.rect.centery - 10)
     
     scores_button.draw(mouse_pos)
-    draw_text('press_start_2p', 'SCORE', 48, YELLOW, win, scores_button.rect.left + 9, scores_button.rect.centery - 20)
+    draw_text('press_start_2p', 'SCORES', 40, YELLOW, win, scores_button.rect.left + 9, scores_button.rect.centery - 20)
 
     pygame.display.update()
 
@@ -53,13 +53,14 @@ def main_menu_loop(win):
                     return 'scores display'
                 
             if event.type == pygame.MOUSEBUTTONDOWN:
-
-                if play_button.is_clicked(mouse_pos):
-                    return 'playing game'
-                if instructions_button.is_clicked(mouse_pos):
-                    return 'instructions'
-                if scores_button.is_clicked(mouse_pos):
-                    return 'scores display'
+                if event.button == 1:
+                    
+                    if play_button.is_clicked(mouse_pos):
+                        return 'playing game'
+                    if instructions_button.is_clicked(mouse_pos):
+                        return 'instructions'
+                    if scores_button.is_clicked(mouse_pos):
+                        return 'scores display'
                 
         draw_window_main_menu(win, mouse_pos)
 
