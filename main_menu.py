@@ -24,6 +24,8 @@ def draw_window_main_menu(win, mouse_pos):
     scores_button.draw(mouse_pos)
     draw_text('press_start_2p', 'SCORES', 40, YELLOW, win, scores_button.rect.left + 9, scores_button.rect.centery - 20)
 
+    win.blit(DUMMY_SPACESHIP, (450, 550))
+
     pygame.display.update()
 
 
@@ -54,7 +56,7 @@ def main_menu_loop(win):
                 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
-                    
+
                     if play_button.is_clicked(mouse_pos):
                         return 'playing game'
                     if instructions_button.is_clicked(mouse_pos):

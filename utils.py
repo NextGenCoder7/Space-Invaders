@@ -19,6 +19,10 @@ def draw_text(font_name, text, font_size, color, win, x, y):
     win.blit(text_surface, (x, y))
 
 
+def load_image(filename):
+    return pygame.image.load(os.path.join('assets', 'images', f'{filename}.png')).convert_alpha()
+
+
 def load_multiple_images(file_prefix, number_of_images):
     images = []
 

@@ -1,5 +1,5 @@
 import pygame
-import os
+from utils import load_image, load_multiple_images
 
 pygame.init()
 
@@ -20,5 +20,8 @@ WHITE = (255, 255, 255)
 GREY = (128, 128, 128)
 BLACK = (0, 0, 0)
 
-SPACE_BG = pygame.image.load(os.path.join('assets', 'images', 'bg.png'))
-SPACE_BG = pygame.transform.scale(SPACE_BG, (WIDTH, HEIGHT))
+SPACE_BG_PATH = load_image('bg')
+SPACE_BG = pygame.transform.scale(SPACE_BG_PATH, (WIDTH, HEIGHT))
+
+SPACESHIP_PATH = load_image('spaceship')
+DUMMY_SPACESHIP = pygame.transform.scale(SPACESHIP_PATH, (200, 200))
