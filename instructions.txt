@@ -12,13 +12,13 @@ All your scores are saved, and you can view all your scores on the scores displa
 
 You can only start the game from the main menu, not from the game over, scores display or this instructions page.
 
-Movement controls:      W / UP arrow = up
-                        A / Left arrow = left
-                        S / Down arrow = down
-                        D / Right arrow = right
-                        SPACE bar = shoot
+Movement controls:  W / UP arrow = up
+                    A / Left arrow = left
+                    S / Down arrow = down
+                    D / Right arrow = right
+                    SPACE bar = shoot or play
 
-Other keys:     I = instructions (this) page
-                M = main menu    
-                S = scores display page
-                Q / ESCAPE = quit 
+Other keys: I = instructions (this) page
+            M = main menu    
+            S = scores display page
+            Q / ESCAPE = quit 

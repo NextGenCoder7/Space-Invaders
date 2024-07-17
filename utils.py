@@ -23,10 +23,16 @@ def load_image(filename):
     return pygame.image.load(os.path.join('assets', 'images', f'{filename}.png')).convert_alpha()
 
 
-def load_multiple_images(file_prefix, number_of_images):
+def load_multiple_images(file_prefix, number_of_images, scale=False, width=0, height=0):
     images = []
 
     for i in range(1, number_of_images + 1):
-        images.append(pygame.image.load(os.path.join('assets', 'images', f'{file_prefix}{i}.png')).convert_alpha())
+        image_path = os.path.join('assets', 'images', f'{file_prefix}{i}.png')
+        image = pygame.image.load(image_path).convert_alpha()
+        
+        if scale:
+            image = pygame.transform.scale(image, (width, height))
+        
+        images.append(image)
 
     return images

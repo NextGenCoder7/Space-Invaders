@@ -25,3 +25,5 @@ SPACE_BG = pygame.transform.scale(SPACE_BG_PATH, (WIDTH, HEIGHT))
 
 SPACESHIP_PATH = load_image('spaceship')
 DUMMY_SPACESHIP = pygame.transform.scale(SPACESHIP_PATH, (200, 200))
+
+DUMMY_ALIENS = load_multiple_images('alien', 5, True, 100, 100)

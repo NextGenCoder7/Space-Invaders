@@ -26,6 +26,18 @@ def draw_window_main_menu(win, mouse_pos):
 
     win.blit(DUMMY_SPACESHIP, (450, 550))
 
+    for index, img in enumerate(DUMMY_ALIENS):
+        if index == 0:
+            win.blit(img, (500, 120))   # done
+        elif index == 1:
+            win.blit(img, (100, 450))   # done
+        elif index == 2:
+            win.blit(img, (900, 450))
+        elif index == 3:
+            win.blit(img, (900, 150))   # done
+        else:
+            win.blit(img, (100, 150))   # done
+
     pygame.display.update()
 
 
