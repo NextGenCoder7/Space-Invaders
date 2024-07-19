@@ -10,7 +10,7 @@ Also try to avoid as many enemy attacks as possible. When you have no more lives
 
 All your scores are saved, and you can view all your scores on the scores display page, and see your highest score as well.
 
-You can only start the game from the main menu, not from the game over, scores display or this instructions page.
+You can only start the game from the main menu, not from the game over, scores display or this instructions page. 
 
 Movement controls:  W / UP arrow = up
                     A / Left arrow = left
