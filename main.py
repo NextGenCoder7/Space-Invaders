@@ -4,6 +4,7 @@ from utils import *
 from main_menu import main_menu_loop
 from instructions import instructions_loop
 from scores import scores_loop
+from game import game_loop
 
 pygame.init()
 
@@ -24,8 +25,10 @@ def main():
                 state = 'scores display'
 
         if state == 'playing game':
-            # TODO: pass the playing game's main loop function here
-            run = False
+            current = game_loop(WIN)
+
+            if current == 'game over':
+                state = 'game over'
 
         if state == 'game over':
             # TODO: pass the game's main loop function here
